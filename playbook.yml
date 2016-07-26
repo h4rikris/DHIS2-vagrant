@@ -1,0 +1,13 @@
+---
+- hosts: all
+  user: vagrant
+  become: yes
+  vars:
+    dhis_home: /home/dhis/
+    http_port: 8080
+    tomcat_ver: 7.0.53
+  roles:
+     - jdk8
+     - postgres
+     - tomcat
+     - deploy

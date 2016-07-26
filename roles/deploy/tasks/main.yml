@@ -1,0 +1,6 @@
+---
+- name: get war file to remote server
+  get_url: url=https://www.dhis2.org/download/releases/2.23/dhis.war dest=/usr/share/tomcat/webapps/ROOT.war owner=tomcat group=tomcat mode=0751
+
+- name: restart tomcat
+  service: name=tomcat state=restarted
